@@ -5,44 +5,22 @@ import SkillsGrid from '../components/SkillsGrid.jsx';
 const CV = () => {
   return (
     <div className="page__content">
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '1rem',
-          marginBottom: '1.5rem',
-        }}
-      >
-        <h1 className="page__title" style={{ margin: 0 }}>
-          Curriculum Vitae
-        </h1>
+      {/* Header with Title & Download Action */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+        <h1 className="page__title m-0!">Curriculum Vitae</h1>
         <a
           href={personalInfo.resumePdf}
           download="Keshav_Goyal_Cv.pdf"
-          className="btn btn--primary"
-          style={{
-            textDecoration: 'none',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-          }}
+          className="btn btn--primary inline-flex items-center gap-2 self-start sm:self-auto text-sm"
+          style={{ textDecoration: 'none' }}
         >
           <i className="fas fa-download"></i> Download PDF
         </a>
       </div>
 
-      {/* PDF Viewer */}
+      {/* Desktop PDF Viewer */}
       <div
-        style={{
-          marginBottom: '2rem',
-          border: '1px solid var(--global-border-color)',
-          borderRadius: '8px',
-          overflow: 'hidden',
-          height: '480px',
-          background: 'rgba(255,255,255,0.03)',
-        }}
+        className="hidden md:block mb-8 border border-[var(--global-border-color)] rounded-lg overflow-hidden h-[480px] bg-slate-50/50 dark:bg-zinc-900/50"
       >
         <iframe
           src={personalInfo.resumePdf}
@@ -53,44 +31,59 @@ const CV = () => {
         />
       </div>
 
+      {/* Mobile PDF Action Card */}
+      <div className="block md:hidden mb-6 p-4 rounded-xl border border-[var(--global-border-color)] bg-[var(--global-code-background-color)] text-center">
+        <i className="fas fa-file-pdf text-3xl text-[var(--global-base-color)] mb-2"></i>
+        <h4 className="text-sm font-bold text-[var(--global-heading-color)] m-0 mb-1">
+          Complete Resume Available in PDF
+        </h4>
+        <p className="text-xs text-[var(--global-text-color-light)] m-0 mb-3">
+          Download or view high-resolution PDF directly on your device.
+        </p>
+        <a
+          href={personalInfo.resumePdf}
+          download="Keshav_Goyal_Cv.pdf"
+          className="btn btn--primary btn--small w-full justify-center inline-flex items-center gap-2"
+          style={{ textDecoration: 'none' }}
+        >
+          <i className="fas fa-download"></i> Download &amp; View PDF
+        </a>
+      </div>
+
+      {/* Education */}
       <h2>Education</h2>
-      <ul>
-        <li>
+      <ul className="pl-4 sm:pl-5 my-3">
+        <li className="mb-2">
           <strong>{educationInfo.degree}</strong> ({educationInfo.timeline})
-          <ul>
-            <li>
-              <em>{educationInfo.institution}</em>
-            </li>
-            <li>
-              <strong>Core Coursework:</strong> {educationInfo.coursework.join(', ')}.
-            </li>
-          </ul>
+          <br />
+          <em>{educationInfo.institution}</em>
         </li>
       </ul>
 
+      {/* Work Experience */}
       <h2>Work Experience</h2>
-      <ul>
+      <ul className="pl-4 sm:pl-5 my-3">
         {experienceList.map((exp, idx) => (
-          <li key={exp.id || idx} style={{ marginBottom: '1.2em' }}>
+          <li key={exp.id || idx} className="mb-4">
             <strong>
               {exp.role} — {exp.company}
             </strong>{' '}
-            <em>({exp.duration})</em>
+            <em className="text-[var(--global-text-color-light)]">({exp.duration})</em>
             {exp.subProjects ? (
               exp.subProjects.map((sp, spIdx) => (
-                <div key={spIdx} style={{ margin: '0.4em 0 0.4em 0.8em' }}>
-                  <p style={{ margin: '0.2em 0', fontWeight: 'bold' }}>• {sp.name}</p>
-                  <ul>
+                <div key={spIdx} className="my-2 pl-2 border-l-2 border-[var(--global-border-color)]">
+                  <p className="font-bold text-sm my-1 text-[var(--global-heading-color)]">• {sp.name}</p>
+                  <ul className="pl-4 my-1">
                     {sp.highlights.map((h, hIdx) => (
-                      <li key={hIdx}>{h}</li>
+                      <li key={hIdx} className="text-xs sm:text-sm mb-1">{h}</li>
                     ))}
                   </ul>
                 </div>
               ))
             ) : (
-              <ul>
+              <ul className="pl-4 my-1">
                 {exp.highlights.map((h, hIdx) => (
-                  <li key={hIdx}>{h}</li>
+                  <li key={hIdx} className="text-xs sm:text-sm mb-1">{h}</li>
                 ))}
               </ul>
             )}
@@ -98,17 +91,19 @@ const CV = () => {
         ))}
       </ul>
 
+      {/* Technical Skills */}
       <h2>Technical Skills</h2>
       <SkillsGrid />
 
+      {/* Featured Projects */}
       <h2>Featured Projects</h2>
-      <ul>
+      <ul className="pl-4 sm:pl-5 my-3">
         {projectList.map((item, idx) => (
-          <li key={idx} style={{ marginBottom: '0.8em' }}>
+          <li key={idx} className="mb-3">
             <strong>
               <Link to={`/projects/${item.slug}`}>{item.title}</Link>
             </strong>
-            <p style={{ margin: '0.2rem 0', color: 'var(--global-text-color-light)' }}>
+            <p className="text-xs sm:text-sm my-1 text-[var(--global-text-color-light)]">
               {item.overview}
             </p>
           </li>
