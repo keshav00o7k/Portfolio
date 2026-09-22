@@ -1,0 +1,6 @@
+# Robots.txt for Keshav Goyal Portfolio
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://keshav00o7k.github.io/sitemap.xml

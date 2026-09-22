@@ -1,0 +1,134 @@
+/* ==========================================================================
+   PORTFOLIO UI REFINEMENTS (LIGHT & DARK THEMES ONLY)
+   ========================================================================== */
+
+/* Profile Avatar styling */
+img.author__avatar {
+  width: 135px !important;
+  height: 135px !important;
+  border-radius: 50%;
+  border: 3px solid var(--global-border-color);
+  object-fit: cover;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin: 0 auto;
+  display: block;
+}
+
+img.author__avatar:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Sidebar & Author Info Layout */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 85px;
+  margin-top: 0;
+  z-index: 10;
+  transition: none !important;
+}
+
+.sidebar .author__content {
+  margin-top: 0.5rem;
+}
+
+.sidebar .author__name {
+  font-size: 1.25rem;
+  margin: 0.25rem 0 0.1rem;
+}
+
+.sidebar .author__bio {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin: 0.25rem 0 0.6rem;
+}
+
+.sidebar .author__urls {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+}
+
+.sidebar .author__urls li,
+.sidebar .author__urls a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--global-text-color);
+  margin-bottom: 0.35rem;
+  text-decoration: none;
+}
+
+.sidebar .author__urls i {
+  width: 16px;
+  text-align: center;
+  color: var(--global-base-color);
+}
+
+.sidebar .author__urls a:hover {
+  color: var(--global-base-color);
+}
+
+/* Fluid responsive typography */
+.page__title {
+  font-size: clamp(1.5rem, 3vw, 2rem) !important;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.page__content h2 {
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem) !important;
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.page__content p,
+.page__content li {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* Mobile Responsiveness (<= 768px) */
+@media (max-width: 768px) {
+  #main {
+    flex-direction: column !important;
+    padding: 0 1rem !important;
+    gap: 1.5rem !important;
+  }
+
+  .sidebar {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .sidebar .author__avatar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sidebar .author__avatar img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+  }
+
+  .sidebar .author__urls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .sidebar .author__desktop {
+    display: none !important;
+  }
+
+  .page {
+    padding-left: 0 !important;
+    width: 100% !important;
+  }
+}

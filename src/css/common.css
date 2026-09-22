@@ -1,0 +1,603 @@
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
+/* ==========================================================================
+   1. COLOR THEMES (Light & Dark Only)
+   ========================================================================== */
+
+:root {
+  --global-bg-color: #ffffff;
+  --global-heading-color: #0f172a;
+  --global-text-color: #334155;
+  --global-text-color-light: #64748b;
+  --global-base-color: #2f7f93;
+  --global-link-color: #2f7f93;
+  --global-link-color-hover: #1e5a69;
+  --global-masthead-link-color: #0f172a;
+  --global-masthead-link-color-hover: #2f7f93;
+  --global-border-color: #e2e8f0;
+  --global-footer-bg-color: #ffffff;
+  --global-code-background-color: #f8fafc;
+  --global-code-text-color: #1e293b;
+}
+
+html[data-theme="dark"] {
+  --global-bg-color: #121212;
+  --global-heading-color: #ffffff;
+  --global-text-color: #f8fafc;
+  --global-text-color-light: #94a3b8;
+  --global-base-color: #0ea1c5;
+  --global-link-color: #0ea1c5;
+  --global-link-color-hover: #38bdf8;
+  --global-masthead-link-color: #ffffff;
+  --global-masthead-link-color-hover: #0ea1c5;
+  --global-border-color: #27272a;
+  --global-footer-bg-color: #121212;
+  --global-code-background-color: #1e1e24;
+  --global-code-text-color: #f1f5f9;
+}
+
+/* ==========================================================================
+   2. RESET & BASE ELEMENTS
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Custom Professional Scrollbar
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--global-base-color);
+}
+
+html {
+  box-sizing: border-box;
+  background-color: var(--global-bg-color);
+  font-size: 16px;
+  position: relative;
+  min-height: 100%;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+}
+
+@media (min-width: 48em) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 65px 0 0 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: var(--global-text-color);
+  background-color: var(--global-bg-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#root {
+  min-height: calc(100vh - 65px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1.8em 0 0.5em;
+  line-height: 1.25;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  color: var(--global-heading-color);
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 1.563em;
+}
+
+h2 {
+  font-size: 1.25em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+p {
+  margin-bottom: 1.3em;
+  color: var(--global-text-color);
+}
+
+blockquote {
+  margin: 1.5em 1em 1.5em 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-style: italic;
+  border-left: 0.25em solid var(--global-border-color);
+}
+
+/* Code */
+code,
+pre {
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+}
+
+a>code,
+li>code,
+p>code,
+td>code {
+  color: var(--global-code-text-color);
+  padding: 0.15rem 0.35rem;
+  font-size: 0.85em;
+  background: var(--global-code-background-color);
+  border: 1px solid var(--global-border-color);
+  border-radius: 4px;
+}
+
+hr {
+  display: block;
+  margin: 1.5em 0;
+  border: 0;
+  border-top: 1px solid var(--global-border-color);
+}
+
+ul,
+ol {
+  margin-bottom: 1em;
+}
+
+ul li,
+ol li {
+  margin-bottom: 0.5em;
+}
+
+/* Links & Images */
+a {
+  color: var(--global-link-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--global-link-color-hover);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+}
+
+/* Tables */
+table {
+  margin-bottom: 1em;
+  width: 100%;
+  font-size: 0.85em;
+  border-collapse: collapse;
+  border: 1px solid var(--global-border-color);
+}
+
+thead {
+  background-color: var(--global-thead-color);
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+th,
+td {
+  padding: 0.6em 0.8em;
+  border-bottom: 1px solid var(--global-border-color);
+  border-right: 1px solid var(--global-border-color);
+}
+
+/* ==========================================================================
+   3. LAYOUT & CONTAINERS
+   ========================================================================== */
+
+.wrapper {
+  max-width: 925px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#main {
+  flex: 1 0 auto;
+  max-width: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  padding: 1.2rem clamp(1.2rem, 3.5vw, 3.5rem) 2.5em;
+  min-height: calc(100vh - 65px);
+  display: flex;
+  gap: 2.8rem;
+  align-items: stretch;
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 85px;
+  margin-top: 0;
+  z-index: 10;
+  transition: none !important;
+}
+
+.main-content-wrapper {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.page,
+.archive {
+  flex: 1 0 auto;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.page__title {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+.page__content h2 {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.page__content p {
+  text-align: justify;
+}
+
+/* ==========================================================================
+   4. MASTHEAD & NAVIGATION
+   ========================================================================== */
+
+.masthead {
+  position: fixed;
+  background: var(--global-bg-color);
+  height: fit-content;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  border-bottom: 1px solid var(--global-border-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.masthead__inner-wrap {
+  max-width: 100%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.6em clamp(1.2rem, 3.5vw, 3.5rem);
+}
+
+.greedy-nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.greedy-nav .site-title {
+  font-weight: 700;
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+}
+
+.greedy-nav .site-title--mobile {
+  display: none;
+}
+
+.greedy-nav .theme-toggle-mobile {
+  display: none;
+}
+
+@media (max-width: 924px) {
+  .greedy-nav .site-title--desktop {
+    display: none;
+  }
+
+  .greedy-nav .site-title--mobile {
+    display: block;
+    font-family: 'Lavishly Yours', cursive;
+    font-size: 1.8rem;
+    font-weight: normal;
+    line-height: 1.2;
+  }
+
+  .greedy-nav .theme-toggle-mobile {
+    display: block;
+    margin-left: auto;
+    margin-right: 0.5rem;
+    color: var(--global-text-color);
+    cursor: pointer;
+    font-size: 1.1em;
+  }
+}
+
+.greedy-nav a {
+  display: block;
+  margin: 0 0.5rem;
+  padding: 0.5rem 0.6rem;
+  color: var(--global-masthead-link-color);
+  text-decoration: none;
+}
+
+.greedy-nav a:hover,
+.greedy-nav a.active {
+  color: var(--global-base-color) !important;
+}
+
+.greedy-nav button {
+  display: none;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  color: var(--global-text-color);
+  cursor: pointer;
+  z-index: 100;
+}
+
+.greedy-nav .visible-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.greedy-nav .visible-links li {
+  display: inline-block;
+}
+
+.greedy-nav .visible-links #theme-toggle a {
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Mobile Nav Dropdown */
+@media (max-width: 924px) {
+  .greedy-nav button {
+    display: block;
+  }
+
+  .greedy-nav .visible-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    margin-top: 15px;
+    padding: 8px 0;
+    border: 1px solid var(--global-border-color);
+    border-radius: 6px;
+    background: var(--global-bg-color);
+  }
+
+  .greedy-nav .visible-links.is-open {
+    display: flex;
+  }
+
+  .greedy-nav .visible-links li {
+    width: 100%;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+
+  .greedy-nav .visible-links li:last-child {
+    border-bottom: none;
+  }
+
+  .greedy-nav .visible-links li a {
+    margin: 0;
+    padding: 10px 18px;
+  }
+
+  .greedy-nav .visible-links #theme-toggle {
+    display: none !important;
+  }
+}
+
+/* Navicon Hamburger Icon */
+.navicon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 26px;
+  height: 3px;
+  background: var(--global-masthead-link-color);
+  margin: auto;
+  transition: 0.3s;
+}
+
+.navicon::before,
+.navicon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 26px;
+  height: 3px;
+  background: var(--global-masthead-link-color);
+  transition: 0.3s;
+}
+
+.navicon::before {
+  top: -7px;
+}
+
+.navicon::after {
+  bottom: -7px;
+}
+
+.close .navicon {
+  background: transparent;
+}
+
+.close .navicon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.close .navicon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* ==========================================================================
+   5. BUTTONS & UTILITIES
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0.25em;
+  padding: 0.55em 1.2em;
+  color: #ffffff !important;
+  font-family: inherit;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none !important;
+  background-color: var(--global-base-color);
+  border: 0 !important;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+.btn--small {
+  font-size: 0.75em;
+  padding: 0.4em 0.8em;
+}
+
+/* ==========================================================================
+   6. FOOTER
+   ========================================================================== */
+
+.page__footer {
+  width: 100%;
+  margin-top: auto;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--global-border-color);
+  color: var(--global-text-color-light);
+  background: transparent;
+}
+
+.page__footer footer {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.page__footer-follow ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.page__footer-follow li {
+  margin: 0;
+  font-size: 0.85em;
+}
+
+.page__footer-copyright {
+  font-size: 0.8em;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .page__footer footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .page__footer-copyright {
+    text-align: center;
+  }
+}
+
+/* Visually Hidden Utility */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px !important;
+  width: 1px !important;
+  border: 0 !important;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}

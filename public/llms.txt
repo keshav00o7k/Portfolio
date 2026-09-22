@@ -1,0 +1,48 @@
+# Keshav Goyal - Full-Stack Developer & Computer Vision Engineer
+
+> Full-Stack Developer with hands-on production experience architecting end-to-end web systems and integrating scalable AI / Computer Vision pipelines.
+
+## Profile Summary
+- **Name:** Keshav Goyal
+- **Location:** Kota, Rajasthan, India
+- **Education:** B.Tech in Computer Science Engineering (2023 - 2027), Government Engineering College, Baran (RTU Kota)
+- **Email:** goyalkeshav316@gmail.com
+- **GitHub:** https://github.com/keshav00o7k
+- **LinkedIn:** https://www.linkedin.com/in/keshav00o7k/
+- **Portfolio Website:** https://keshav00o7k.github.io/
+
+---
+
+## Core Technical Skills
+- **Frontend:** React.js, JavaScript (ES6+), Tailwind CSS, HTML5, CSS3, Responsive UI/UX, Component Architecture
+- **Backend & APIs:** Node.js, Express.js, RESTful APIs, JWT Authentication, Email OTP Verification, Middleware Architecture
+- **AI & Computer Vision:** Python, InsightFace, FAISS (Vector Similarity Search), ONNX Runtime, OpenCV, NumPy
+- **Databases:** MongoDB, MongoDB Atlas, Document Modeling, Aggregation Pipelines
+- **DevOps & Cloud:** Git, GitHub, Linux VPS, Cloudflare Tunnels, Postman, Vite
+
+---
+
+## Key Production Projects & Live Platforms
+
+### 1. Fotographiya: AI Face Recognition & Event Photo-Sharing Platform
+- **Live URL:** https://quick.fotographiya.com/
+- **GitHub:** https://github.com/keshav00o7k
+- **Tech Stack:** React.js, Node.js, Express.js, MongoDB Atlas, Python, InsightFace, FAISS, Cloudflare
+- **Architecture:** Shifted compute from slow query-time scanning to upload-time embedding extraction. Uses InsightFace with ONNX Runtime to extract 512-D facial vectors and FAISS for sub-second similarity matching.
+
+### 2. Fotographiya: Commercial Business Web Platform
+- **Live URL:** https://www.fotographiya.com/
+- **Tech Stack:** React.js, Tailwind CSS, Modern CSS, Vite, SEO
+- **Architecture:** Commercial frontend platform engineered for corporate brand showcase, photography portfolios, structured OpenGraph metadata, and high-conversion client inquiry funnels.
+
+### 3. Fotographiya: Wedding & Cinematic Landing Platform
+- **Live URL:** https://wedding.fotographiya.com/
+- **Tech Stack:** React.js, Modern CSS Animations, Tailwind CSS, Responsive UI, Vite
+- **Architecture:** High-conversion, visually rich landing page tailored for luxury wedding photography, featuring cinematic visual storytelling, couple photo galleries, and instant booking funnels.
+
+---
+
+## Work Experience
+- **MERN Stack Developer (Full-Time)** — Fotographiya (Aug 2025 – Present, Hybrid)
+- **MERN Stack Developer Intern** — Fotographiya (Jun 2025 – Jul 2025, On-site)
+- **Python Developer Intern** — OctaNet Services Pvt Ltd (Oct 2024 – Nov 2024, Remote)
