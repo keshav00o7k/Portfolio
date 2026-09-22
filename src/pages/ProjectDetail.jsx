@@ -77,14 +77,19 @@ const ProjectDetail = () => {
         </p>
       )}
 
-      <p>
-        <strong>Tech Stack:</strong>{' '}
+      <div className="flex flex-wrap items-center gap-1.5 my-3 text-left">
+        <span className="text-xs font-semibold text-[var(--global-text-color)] mr-1">
+          Tech Stack:
+        </span>
         {project.techStack.map((tech, idx) => (
-          <code key={idx} style={{ marginRight: '5px' }}>
+          <span
+            key={idx}
+            className="text-[0.72rem] font-medium px-2 py-0.5 rounded-md border border-[var(--global-border-color)] bg-[var(--global-code-background-color)] text-[var(--global-base-color)] inline-flex items-center"
+          >
             {tech}
-          </code>
+          </span>
         ))}
-      </p>
+      </div>
 
       <h2>⚙️ Key Highlights &amp; Architecture</h2>
       <ul>
