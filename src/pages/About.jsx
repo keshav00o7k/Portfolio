@@ -6,6 +6,11 @@ import SkillsGrid from '../components/SkillsGrid.jsx';
 const About = () => {
   return (
     <div className="page__content">
+      {/* Page Main Semantic Heading */}
+      <h1 className="visually-hidden">
+        Keshav Goyal - Full-Stack Developer &amp; Computer Vision Engineer
+      </h1>
+
       {/* Intro Summary */}
       <p style={{ fontSize: '1.05em', lineHeight: '1.7' }}>
         {personalInfo.summary}
@@ -35,7 +40,7 @@ const About = () => {
       <h2>Featured Projects</h2>
       <div>
         {projectList.map((proj, idx) => (
-          <ProjectCard key={proj.slug} project={proj} index={idx + 1} />
+          <ProjectCard key={proj.slug} project={proj} index={idx + 1} headingLevel="h3" />
         ))}
       </div>
     </div>

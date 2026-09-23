@@ -1,4 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
+
+import { Analytics } from "@vercel/analytics/react"
+
 import Masthead from './components/Masthead.jsx';
 import Sidebar from './components/Sidebar.jsx';
 import Footer from './components/Footer.jsx';
@@ -38,6 +41,8 @@ const App = () => {
           <Footer />
         </div>
       </div>
+
+      <Analytics />
     </>
   );
 };

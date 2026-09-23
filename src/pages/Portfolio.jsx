@@ -8,7 +8,7 @@ const Portfolio = () => {
 
       <div className="entries-list">
         {projectList.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+          <ProjectCard key={project.slug} project={project} headingLevel="h2" />
         ))}
       </div>
     </div>
