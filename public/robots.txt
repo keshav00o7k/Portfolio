@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://keshav00o7k.github.io/sitemap.xml
+Sitemap: https://keshav-goyal.vercel.app/sitemap.xml

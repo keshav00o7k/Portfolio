@@ -22,10 +22,14 @@ const App = () => {
           <div className="archive">
             <Routes>
               <Route path="/" element={<About />} />
+              <Route path="/experience" element={<Experience />} />
               <Route path="/experience/" element={<Experience />} />
+              <Route path="/projects" element={<Portfolio />} />
               <Route path="/projects/" element={<Portfolio />} />
               <Route path="/projects/:slug" element={<ProjectDetail />} />
+              <Route path="/cv" element={<CV />} />
               <Route path="/cv/" element={<CV />} />
+              <Route path="/year-archive" element={<Insights />} />
               <Route path="/year-archive/" element={<Insights />} />
               <Route path="*" element={<About />} />
             </Routes>
