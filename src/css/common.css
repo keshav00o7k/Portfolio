@@ -338,21 +338,12 @@ td {
   text-decoration: none !important;
 }
 
-.greedy-nav .site-title--mobile {
-  display: none;
-}
-
 .greedy-nav .theme-toggle-mobile {
   display: none;
 }
 
 @media (max-width: 924px) {
-  .greedy-nav .site-title--desktop {
-    display: none;
-  }
-
-  .greedy-nav .site-title--mobile {
-    display: block;
+  .greedy-nav .site-title {
     font-family: 'Lavishly Yours', cursive;
     font-size: 1.8rem;
     font-weight: normal;

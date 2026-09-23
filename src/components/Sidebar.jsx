@@ -23,7 +23,9 @@ const Sidebar = () => {
         </div>
 
         <div className="author__content">
-          <h3 className="author__name">{personalInfo.name}</h3>
+          <div className="author__name" role="heading" aria-level="2" style={{ fontWeight: 700, fontSize: '1.25em' }}>
+            {personalInfo.name}
+          </div>
           <p style={{ margin: '0.2em 0 0.5em', fontSize: '0.85em', fontWeight: 600, color: 'var(--global-base-color)' }}>
             {personalInfo.title}
           </p>
@@ -34,6 +36,7 @@ const Sidebar = () => {
           <a
             href={personalInfo.resumePdf}
             download="Keshav_Goyal_Cv.pdf"
+            aria-label="Download Keshav Goyal Resume in PDF format"
             className="btn btn--primary btn--block"
             style={{ marginBottom: '10px', textDecoration: 'none' }}
           >

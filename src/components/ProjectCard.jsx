@@ -1,16 +1,18 @@
 import { Link } from 'react-router-dom';
 import '../css/projectCard.css';
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project, index, headingLevel = 'h2' }) => {
+  const HeadingTag = headingLevel;
+
   return (
     <div className="project-card">
       {/* Top Row: Title + Live Badge */}
       <div className="project-card__top">
-        <h3 className="project-card__title">
-          <Link to={`/projects/${project.slug}`}>
+        <HeadingTag className="project-card__title">
+          <Link to={`/projects/${project.slug}`} aria-label={`View case study: ${project.title}`}>
             {index ? `${index}. ` : ''}{project.title}
           </Link>
-        </h3>
+        </HeadingTag>
 
         <div className="project-card__badge">
           <span className="pulse-dot"></span>
@@ -34,7 +36,11 @@ const ProjectCard = ({ project, index }) => {
 
       {/* Action Buttons */}
       <div className="project-card__actions">
-        <Link to={`/projects/${project.slug}`} className="btn-card btn-card--primary">
+        <Link
+          to={`/projects/${project.slug}`}
+          className="btn-card btn-card--primary"
+          aria-label={`View Case Study for ${project.title}`}
+        >
           View Case Study <i className="fas fa-arrow-right text-xs"></i>
         </Link>
 
@@ -44,6 +50,7 @@ const ProjectCard = ({ project, index }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-card btn-card--outline"
+            aria-label={`Open Live Platform: ${project.title}`}
           >
             <i className="fas fa-arrow-up-right-from-square text-xs"></i> Live Platform
           </a>
@@ -57,6 +64,7 @@ const ProjectCard = ({ project, index }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-card btn-card--outline"
+              aria-label={`Open ${link.label}: ${project.title}`}
             >
               <i className="fas fa-arrow-up-right-from-square text-xs"></i> {link.label}
             </a>
@@ -68,6 +76,7 @@ const ProjectCard = ({ project, index }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-card btn-card--outline"
+            aria-label={`View source code for ${project.title} on GitHub`}
           >
             <i className="fab fa-github"></i> GitHub
           </a>

@@ -20,7 +20,7 @@ const CV = () => {
 
       {/* Desktop PDF Viewer */}
       <div
-        className="hidden md:block mb-8 border border-[var(--global-border-color)] rounded-lg overflow-hidden h-[480px] bg-slate-50/50 dark:bg-zinc-900/50"
+        className="hidden md:block mb-8 border border-(--global-border-color) rounded-lg overflow-hidden h-[480px] bg-slate-50/50 dark:bg-zinc-900/50"
       >
         <iframe
           src={personalInfo.resumePdf}

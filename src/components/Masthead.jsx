@@ -27,13 +27,13 @@ const Masthead = () => {
       <div className="masthead__inner-wrap">
         <div className="masthead__menu">
           <nav id="site-nav" className="greedy-nav">
-            {/* Desktop Brand */}
-            <NavLink className="site-title site-title--desktop" to="/" style={{ fontWeight: 700 }} onClick={closeMenu}>
-              Keshav Goyal
-            </NavLink>
-
-            {/* Mobile Brand */}
-            <NavLink className="site-title site-title--mobile" to="/" onClick={closeMenu}>
+            {/* Brand Title */}
+            <NavLink
+              className="site-title"
+              to="/"
+              aria-label="Keshav Goyal Homepage"
+              onClick={closeMenu}
+            >
               Keshav Goyal
             </NavLink>
 
@@ -67,22 +67,22 @@ const Masthead = () => {
                 </NavLink>
               </li>
               <li className="masthead__menu-item">
-                <NavLink to="/experience/" onClick={closeMenu}>
+                <NavLink to="/experience" onClick={closeMenu}>
                   Experience
                 </NavLink>
               </li>
               <li className="masthead__menu-item">
-                <NavLink to="/projects/" onClick={closeMenu}>
+                <NavLink to="/projects" onClick={closeMenu}>
                   Projects
                 </NavLink>
               </li>
               <li className="masthead__menu-item">
-                <NavLink to="/cv/" onClick={closeMenu}>
+                <NavLink to="/cv" onClick={closeMenu}>
                   CV
                 </NavLink>
               </li>
               <li className="masthead__menu-item">
-                <NavLink to="/year-archive/" onClick={closeMenu}>
+                <NavLink to="/year-archive" onClick={closeMenu}>
                   Insights (Blog)
                 </NavLink>
               </li>
