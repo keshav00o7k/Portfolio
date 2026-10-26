@@ -6,11 +6,12 @@ const CV = () => {
   return (
     <div className="page__content">
       {/* Header with Title & Download Action */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 mb-2 sm:mb-6">
         <h1 className="page__title m-0!">Curriculum Vitae</h1>
         <a
           href={personalInfo.resumePdf}
           download="Keshav_Goyal_Cv.pdf"
+          aria-label="Download Keshav Goyal Curriculum Vitae in PDF format"
           className="btn btn--primary inline-flex items-center gap-2 self-start sm:self-auto text-sm"
           style={{ textDecoration: 'none' }}
         >
@@ -19,35 +20,35 @@ const CV = () => {
       </div>
 
       {/* Desktop PDF Viewer */}
-      <div
-        className="hidden md:block mb-8 border border-(--global-border-color) rounded-lg overflow-hidden h-[480px] bg-slate-50/50 dark:bg-zinc-900/50"
-      >
-        <iframe
-          src={personalInfo.resumePdf}
+      <div className="cv-desktop-viewer">
+        <object
+          data={personalInfo.resumePdf}
+          type="application/pdf"
           width="100%"
           height="100%"
-          style={{ border: 'none' }}
-          title="CV Preview"
-        />
-      </div>
-
-      {/* Mobile PDF Action Card */}
-      <div className="block md:hidden mb-6 p-4 rounded-xl border border-[var(--global-border-color)] bg-[var(--global-code-background-color)] text-center">
-        <i className="fas fa-file-pdf text-3xl text-[var(--global-base-color)] mb-2"></i>
-        <h4 className="text-sm font-bold text-[var(--global-heading-color)] m-0 mb-1">
-          Complete Resume Available in PDF
-        </h4>
-        <p className="text-xs text-[var(--global-text-color-light)] m-0 mb-3">
-          Download or view high-resolution PDF directly on your device.
-        </p>
-        <a
-          href={personalInfo.resumePdf}
-          download="Keshav_Goyal_Cv.pdf"
-          className="btn btn--primary btn--small w-full justify-center inline-flex items-center gap-2"
-          style={{ textDecoration: 'none' }}
+          style={{ width: '100%', height: '100%', display: 'block' }}
         >
-          <i className="fas fa-download"></i> Download &amp; View PDF
-        </a>
+          <iframe
+            src={personalInfo.resumePdf}
+            width="100%"
+            height="100%"
+            style={{ border: 'none', width: '100%', height: '100%' }}
+            title="CV Preview"
+          >
+            <div className="p-4 text-center">
+              <p className="text-sm text-[var(--global-text-color-light)] mb-3">
+                Your browser does not support embedded PDF preview.
+              </p>
+              <a
+                href={personalInfo.resumePdf}
+                download="Keshav_Goyal_Cv.pdf"
+                className="btn btn--primary btn--small"
+              >
+                <i className="fas fa-download"></i> Download PDF Directly
+              </a>
+            </div>
+          </iframe>
+        </object>
       </div>
 
       {/* Education */}

@@ -20,14 +20,14 @@ const ProjectDetail = () => {
 
   return (
     <div className="page__content">
-      <p>
-        <Link to="/projects/">← Back to Projects</Link>
+      <p className="mb-2 text-sm">
+        <Link to="/projects">← Back to Projects</Link>
       </p>
 
       <h1 className="page__title">{project.title}</h1>
 
       {/* Action links */}
-      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.2rem', alignItems: 'center' }}>
+      <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginBottom: '1rem', alignItems: 'center' }}>
         {project.liveUrl && (
           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn--primary btn--small">
             <i className="fas fa-arrow-up-right-from-square"></i> Open Live Platform

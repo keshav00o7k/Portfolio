@@ -20,7 +20,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="page__footer-copyright">
-          &copy; {new Date().getFullYear()} {personalInfo.name}, Powered by React &amp; Vite.<br />
+          &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.<br />
           {personalInfo.location}
         </div>
       </footer>
