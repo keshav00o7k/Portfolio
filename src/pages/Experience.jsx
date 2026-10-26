@@ -6,19 +6,19 @@ const Experience = () => {
       <h1 className="page__title">Work Experience</h1>
 
       {experienceList.map((exp, idx) => (
-        <div key={exp.id || idx} style={{ marginBottom: '2.5em' }}>
+        <div key={exp.id || idx} className="mb-6 sm:mb-10">
           <h2 style={{ marginBottom: '0.2em' }}>
             {exp.role} — {exp.company}
           </h2>
-          <p style={{ margin: '0 0 0.8em', color: 'var(--global-text-color-light)', fontStyle: 'italic' }}>
+          <p style={{ margin: '0 0 0.5em', color: 'var(--global-text-color-light)', fontStyle: 'italic' }}>
             {exp.type} · {exp.location} · {exp.duration}
           </p>
 
           {/* Subprojects or direct highlights */}
           {exp.subProjects ? (
             exp.subProjects.map((sp, spIdx) => (
-              <div key={spIdx} style={{ marginBottom: '1.4em' }}>
-                <h3 style={{ margin: '0.8em 0 0.3em', fontSize: '1.05em' }}>
+              <div key={spIdx} className="mb-4 sm:mb-6">
+                <h3 style={{ margin: '0.6em 0 0.25em', fontSize: '1.05em' }}>
                   • {sp.name}
                 </h3>
 

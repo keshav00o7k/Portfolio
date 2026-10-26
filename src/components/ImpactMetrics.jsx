@@ -3,9 +3,9 @@ import '../css/impactMetrics.css';
 const metrics = [
   {
     icon: 'fa-solid fa-globe',
-    stat: '3+ Live Platforms',
+    stat: '4+ Live Platforms',
     title: 'Production Deployments',
-    desc: 'Fotographiya AI, Main & Wedding commercial portals.',
+    desc: 'Fotographiya AI, Commercial portals & Budget Flow Tracker.',
   },
   {
     icon: 'fa-solid fa-bolt',

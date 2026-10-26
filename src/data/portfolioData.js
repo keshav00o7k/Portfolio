@@ -19,7 +19,7 @@ export const skillCategories = [
   {
     category: "Frontend",
     icon: "fa-solid fa-laptop-code",
-    skills: ["React.js", "JavaScript (ES6+)", "Tailwind CSS", "HTML5", "CSS3", "Responsive UI/UX", "Component Architecture"]
+    skills: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "HTML5", "CSS3", "Responsive UI/UX", "Component Architecture"]
   },
   {
     category: "Backend & APIs",
@@ -34,7 +34,7 @@ export const skillCategories = [
   {
     category: "Databases",
     icon: "fa-solid fa-database",
-    skills: ["MongoDB", "MongoDB Atlas", "Document Modeling", "Aggregation Pipelines"]
+    skills: ["MongoDB", "MongoDB Atlas", "Mongoose", "Document Modeling", "Aggregation Pipelines"]
   },
   {
     category: "DevOps & Deployment",
@@ -113,7 +113,6 @@ export const projectList = [
     slug: "face-recognition",
     title: "Fotographiya: AI Face Recognition & Event Photo-Sharing Platform",
     liveUrl: "https://quick.fotographiya.com/",
-    githubUrl: "https://github.com/keshav00o7k",
     techStack: ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "Python", "InsightFace", "FAISS", "Cloudflare"],
     overview: "A full-stack platform solving event photo chaos. Instead of browsing thousands of album photos, users upload a single selfie to query pre-indexed facial vector embeddings and instantly retrieve their personal photos.",
     keyArchitecture: "Upload-time facial indexing, asynchronous processing, JWT-authenticated client access.",
@@ -135,6 +134,39 @@ export const projectList = [
       {
         title: "Asynchronous Media Pipelines",
         text: "Designed background workers to process and index high-resolution event media without blocking client requests."
+      }
+    ]
+  },
+  {
+    slug: "budget-flow-tracker",
+    id: "budget-flow-tracker",
+    title: "Budget Flow — Personal Finance & Expense Tracker",
+    category: "Fullstack / Next.js",
+    featured: true,
+    image: "/projects/budget-flow.png",
+    liveUrl: "https://budgetflowtracker.vercel.app/",
+    githubUrl: "https://github.com/keshav00o7k/budgetflowtracker",
+    techStack: ["Next.js 15", "React 19", "TypeScript", "MongoDB", "Mongoose", "Tailwind CSS v4", "Recharts", "Node.js"],
+    overview: "A local-first and cloud-synced personal finance platform featuring an automated budget rollover recommendation algorithm, visual spending analytics, and zero-tracking privacy.",
+    keyArchitecture: "Local-first architecture with offline fallback and MongoDB cloud synchronization.",
+    problem: "Traditional personal finance tools often require intrusive tracking, complex manual upkeep, or lack intelligent rollover recommendations across budgeting cycles.",
+    solution: "Engineered a privacy-centric, zero-tracking finance platform with an automated monthly budget rollover engine, dynamic Recharts data visualizations, and offline-first local persistence synced with MongoDB.",
+    highlights: [
+      {
+        title: "Intelligent Budget Rollover & Suggestion Engine",
+        text: "Automated monthly rollover recommendation algorithm that calculates suggested budget adjustments based on previous spending patterns."
+      },
+      {
+        title: "Dynamic Visual Spending Analytics",
+        text: "Integrated interactive Recharts visualizations (Pie, Line, Bar charts) to provide instant visual breakdown of expense trends and category distributions."
+      },
+      {
+        title: "Local-First Architecture with Cloud Sync",
+        text: "Built a resilient local-first architecture with offline fallback and robust MongoDB Atlas & Mongoose synchronization."
+      },
+      {
+        title: "Zero-Tracking Privacy & Portability",
+        text: "Ensured complete user privacy with zero tracking telemetry, along with full JSON data export and import capabilities."
       }
     ]
   },
