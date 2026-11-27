@@ -16,7 +16,7 @@ const ProjectCard = ({ project, index, headingLevel = 'h2' }) => {
 
         <div className="project-card__badge">
           <span className="pulse-dot"></span>
-          <span>Live Production</span>
+          <span>{project.badge || 'Live Production'}</span>
         </div>
       </div>
 
@@ -25,13 +25,18 @@ const ProjectCard = ({ project, index, headingLevel = 'h2' }) => {
         {project.overview}
       </p>
 
-      {/* Tech Stack Pills */}
+      {/* Tech Stack Pills (trimmed for clean card scan; full list on Case Study) */}
       <div className="project-card__tech">
-        {project.techStack.map((tech, tIdx) => (
+        {project.techStack.slice(0, 5).map((tech, tIdx) => (
           <span key={tIdx} className="tech-pill">
             {tech}
           </span>
         ))}
+        {project.techStack.length > 5 && (
+          <span className="tech-pill tech-pill--more">
+            +{project.techStack.length - 5} more
+          </span>
+        )}
       </div>
 
       {/* Action Buttons */}
@@ -70,7 +75,7 @@ const ProjectCard = ({ project, index, headingLevel = 'h2' }) => {
             </a>
           ))}
 
-        {project.githubUrl && (
+        {project.githubUrl ? (
           <a
             href={project.githubUrl}
             target="_blank"
@@ -80,6 +85,12 @@ const ProjectCard = ({ project, index, headingLevel = 'h2' }) => {
           >
             <i className="fab fa-github"></i> GitHub
           </a>
+        ) : (
+          project.isPrivateRepo && (
+            <span className="project-card__private-badge" title="Source code is private to the client">
+              <i className="fas fa-lock text-xs" aria-hidden="true"></i> Private Client Repo
+            </span>
+          )
         )}
       </div>
     </div>

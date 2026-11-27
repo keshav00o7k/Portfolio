@@ -50,10 +50,16 @@ const ProjectDetail = () => {
           </div>
         )}
 
-        {project.githubUrl && (
+        {project.githubUrl ? (
           <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn btn--inverse btn--small">
             <i className="fab fa-fw fa-github"></i> GitHub Repository
           </a>
+        ) : (
+          project.isPrivateRepo && (
+            <span className="project-card__private-badge" title="Source code is private to the client">
+              <i className="fas fa-lock text-xs" aria-hidden="true"></i> Private Client Repo
+            </span>
+          )
         )}
       </div>
 

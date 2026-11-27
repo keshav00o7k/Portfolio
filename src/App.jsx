@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { Analytics } from "@vercel/analytics/react"
 
@@ -32,8 +32,10 @@ const App = () => {
               <Route path="/projects/:slug" element={<ProjectDetail />} />
               <Route path="/cv" element={<CV />} />
               <Route path="/cv/" element={<CV />} />
-              <Route path="/year-archive" element={<Insights />} />
-              <Route path="/year-archive/" element={<Insights />} />
+              <Route path="/insights" element={<Insights />} />
+              <Route path="/insights/" element={<Insights />} />
+              <Route path="/year-archive" element={<Navigate to="/insights" replace />} />
+              <Route path="/year-archive/" element={<Navigate to="/insights" replace />} />
               <Route path="*" element={<About />} />
             </Routes>
           </div>

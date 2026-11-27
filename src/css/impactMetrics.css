@@ -1,76 +1,85 @@
 /* ==========================================================================
-   Impact Metrics Component Styles
+   Impact Metrics Strip Styles (Clean Divider Layout — No Heavy Boxes)
    ========================================================================== */
 
-.metrics-grid {
+.metrics-strip {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin: 1.5rem 0 2rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--global-border-color);
+  border-bottom: 1px solid var(--global-border-color);
+  margin: 1.4rem 0 2rem;
+  padding: 1rem 0;
   text-align: left;
 }
 
-.metric-card {
-  background-color: var(--global-code-background-color);
-  border: 1px solid var(--global-border-color);
-  border-radius: 10px;
-  padding: 1rem 1.15rem;
+.metric-item {
+  padding: 0.25rem 1rem;
+  border-right: 1px solid var(--global-border-color);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  cursor: default;
 }
 
-.metric-card:hover {
-  border-color: var(--global-base-color);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+.metric-item:first-child {
+  padding-left: 0;
 }
 
-.metric-card__header {
+.metric-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.metric-item__stat {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  margin-bottom: 0.4rem;
-}
-
-.metric-card__icon-box {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background-color: rgba(47, 127, 147, 0.12);
-  color: var(--global-base-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 0.95rem;
-}
-
-.metric-card__stat {
-  font-size: 1.05rem;
+  gap: 0.45rem;
+  font-size: 1.02rem;
   font-weight: 700;
-  color: var(--global-text-color);
-  line-height: 1.2;
-  margin: 0;
-  padding: 0;
+  color: var(--global-heading-color);
+  line-height: 1.25;
+  margin-bottom: 0.2rem;
 }
 
-.metric-card__title {
-  font-size: 0.82rem;
+.metric-item__icon {
+  color: var(--global-base-color);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.metric-item__title {
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--global-base-color);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
   line-height: 1.25;
 }
 
-.metric-card__desc {
+.metric-item__desc {
   margin: 0 !important;
   padding: 0 !important;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--global-text-color-light);
   line-height: 1.45;
   text-align: left !important;
+}
+
+@media (max-width: 900px) {
+  .metrics-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem 0;
+  }
+
+  .metric-item {
+    padding: 0.25rem 0.9rem;
+  }
+
+  .metric-item:nth-child(odd) {
+    padding-left: 0;
+  }
+
+  .metric-item:nth-child(even) {
+    border-right: none;
+    padding-right: 0;
+  }
 }
