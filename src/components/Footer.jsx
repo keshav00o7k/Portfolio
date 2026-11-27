@@ -8,6 +8,11 @@ const Footer = () => {
           <ul className="social-icons">
             <li><strong>Follow:</strong></li>
             <li>
+              <a href={`mailto:${personalInfo.email}`}>
+                <i className="fas fa-envelope" aria-hidden="true"></i> Email
+              </a>
+            </li>
+            <li>
               <a href={personalInfo.github} target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-github" aria-hidden="true"></i> GitHub
               </a>

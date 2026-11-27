@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
-
 /* ==========================================================================
    1. COLOR THEMES (Light & Dark Only)
    ========================================================================== */
@@ -343,13 +341,6 @@ td {
 }
 
 @media (max-width: 924px) {
-  .greedy-nav .site-title {
-    font-family: 'Lavishly Yours', cursive;
-    font-size: 1.8rem;
-    font-weight: normal;
-    line-height: 1.2;
-  }
-
   .greedy-nav .theme-toggle-mobile {
     display: block;
     margin-left: auto;
@@ -587,4 +578,44 @@ td {
   width: 1px !important;
   border: 0 !important;
   overflow: hidden;
+}
+
+/* ==========================================================================
+   Scroll-Reveal & Micro-Interactions
+   ========================================================================== */
+
+.reveal-section {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-card--primary i {
+  transition: transform 0.2s ease;
+}
+
+.btn-card--primary:hover .fa-arrow-right {
+  transform: translateX(3px);
+}
+
+.btn-card--primary:hover .fa-arrow-down {
+  transform: translateY(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn-card--primary i {
+    transition: none;
+  }
 }

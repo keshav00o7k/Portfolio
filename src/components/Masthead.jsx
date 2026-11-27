@@ -82,7 +82,7 @@ const Masthead = () => {
                 </NavLink>
               </li>
               <li className="masthead__menu-item">
-                <NavLink to="/year-archive" onClick={closeMenu}>
+                <NavLink to="/insights" onClick={closeMenu}>
                   Insights (Blog)
                 </NavLink>
               </li>

@@ -3,21 +3,17 @@ import '../css/skillsGrid.css';
 
 const SkillsGrid = () => {
   return (
-    <div className="skills-container">
+    <div className="skills-list">
       {skillCategories.map((cat, idx) => (
-        <div key={idx} className="skill-category-card">
-          <div className="skill-category-header">
-            <i className={`${cat.icon} skill-category-icon`}></i>
-            <h3 className="skill-category-title">{cat.category}</h3>
+        <div key={idx} className="skill-group">
+          <div className="skill-group__header">
+            <i className={`${cat.icon} skill-group__icon`} aria-hidden="true"></i>
+            <h3 className="skill-group__title">{cat.category}</h3>
           </div>
 
-          <div className="skills-tags-wrap">
-            {cat.skills.map((skill, sIdx) => (
-              <span key={sIdx} className="skill-tag">
-                {skill}
-              </span>
-            ))}
-          </div>
+          <p className="skill-group__items">
+            {cat.skills.join(' · ')}
+          </p>
         </div>
       ))}
     </div>

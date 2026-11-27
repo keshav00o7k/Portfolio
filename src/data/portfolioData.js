@@ -1,25 +1,27 @@
 export const personalInfo = {
   name: "Keshav Goyal",
-  title: "Full-Stack Developer | MERN & Computer Vision",
+  title: "Full-Stack Developer (MERN, Next.js) | Python & Face Recognition",
   tagline: "Building robust web systems, scalable backend architectures, and production-ready Computer Vision pipelines.",
   location: "Kota, Rajasthan, India",
   college: "Government Engineering College, Baran (RTU Kota)",
   degree: "Bachelor of Technology (B.Tech) in Computer Science Engineering",
   timeline: "Sep 2023 – 2027",
   email: "goyalkeshav316@gmail.com",
+  phone: "+91 63782 11330",
+  whatsapp: "https://wa.me/916378211330",
   github: "https://github.com/keshav00o7k",
   linkedin: "https://www.linkedin.com/in/keshav00o7k/",
-  availability: "Open to Full-Stack & Backend Software Engineering Roles",
+  availability: "Open to Full-Stack & Backend Developer Roles",
   resumePdf: "/Keshav_Goyal_Cv.pdf",
   avatar: "/assets/images/profile.png",
-  summary: "Full-Stack Developer with practical engineering experience in developing end-to-end web applications and integrating AI/Computer Vision workflows. Passionate about architecting scalable RESTful APIs, designing clean database schemas, and optimizing media-heavy applications for seamless real-time performance."
+  summary: "Full-stack developer with over 1 year of hands-on experience on a live client product (MERN stack, Next.js, TypeScript). Built the face-search feature of an event photo-sharing platform using Python, InsightFace, and FAISS (2,000+ photos, sub-second search). Final-year B.Tech CSE student."
 };
 
 export const skillCategories = [
   {
     category: "Frontend",
     icon: "fa-solid fa-laptop-code",
-    skills: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "HTML5", "CSS3", "Responsive UI/UX", "Component Architecture"]
+    skills: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "Recharts", "HTML5", "CSS3"]
   },
   {
     category: "Backend & APIs",
@@ -39,7 +41,12 @@ export const skillCategories = [
   {
     category: "DevOps & Deployment",
     icon: "fa-solid fa-cloud-arrow-up",
-    skills: ["Git", "GitHub", "Linux VPS", "Cloudflare Tunnels", "Postman", "Vite"]
+    skills: ["Git", "GitHub", "Linux VPS", "Cloudflare Tunnels", "Postman", "Vite", "Vercel"]
+  },
+  {
+    category: "Architecture & Security",
+    icon: "fa-solid fa-shield-halved",
+    skills: ["JWT Auth", "HMAC Cookies", "Rate Limiting", "REST APIs", "Input Validation", "Scrypt Hashing"]
   }
 ];
 
@@ -47,8 +54,8 @@ export const experienceList = [
   {
     id: "fotographiya-fulltime",
     company: "Fotographiya",
-    location: "Kota, Rajasthan (Hybrid)",
-    role: "MERN Stack Developer (Full-Time)",
+    location: "Kota, Rajasthan",
+    role: "MERN Stack Developer (Hybrid)",
     duration: "Aug 2025 – Aug 2026",
     type: "Full-Time",
     subProjects: [
@@ -56,10 +63,11 @@ export const experienceList = [
         name: "AI Event Photo-Sharing Platform (Core Product)",
         liveUrl: "https://quick.fotographiya.com/",
         highlights: [
-          "Co-developed and scaled full-stack event platform using React.js, Node.js, Express, and MongoDB Atlas.",
-          "Re-architected facial retrieval from request-time scanning to upload-time vector indexing for scalable event photo matching.",
-          "Collaborated on integrating InsightFace and FAISS in Python for facial feature extraction and similarity search.",
-          "Implemented backend security flows, JWT authentication, protected routes, and input validation."
+          "Built and maintained the full-stack event photo-sharing platform (React.js, Node.js, Express.js, MongoDB Atlas).",
+          "Moved face search from query-time scanning to upload-time vector indexing, bringing search time under one second across 2,000+ event photos.",
+          "Worked with InsightFace and FAISS in Python for 512-dimensional face embeddings and similarity matching.",
+          "Built JWT authentication, email OTP verification, protected routes, and selfie input validation.",
+          "Built background workers that process and index high-resolution uploads without blocking user requests."
         ]
       },
       {
@@ -111,6 +119,8 @@ export const experienceList = [
 export const projectList = [
   {
     slug: "face-recognition",
+    featured: true,
+    isPrivateRepo: true,
     title: "Fotographiya: AI Face Recognition & Event Photo-Sharing Platform",
     liveUrl: "https://quick.fotographiya.com/",
     techStack: ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "Python", "InsightFace", "FAISS", "Cloudflare"],
@@ -171,7 +181,41 @@ export const projectList = [
     ]
   },
   {
+    slug: "ansh-vaishnav-media-cms",
+    featured: true,
+    isPrivateRepo: true,
+    badge: "Client Work · Live Production",
+    title: "Ansh Vaishnav — Video Editor Portfolio & Media CMS",
+    category: "Client Work / Full-Stack Next.js",
+    liveUrl: "https://ansh-portfolio-jet.vercel.app/",
+    techStack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "Cloudinary", "Resend API", "Motion", "GSAP", "Vercel"],
+    overview: "A custom, full-stack portfolio and media CMS built for a freelance video editor (YouTube long-form & short-form reels). Engineered with a Cloudinary video pipeline, a custom HMAC-authenticated admin dashboard, and a hardened Resend contact API.",
+    keyArchitecture: "Next.js ISR media pipeline, HMAC-signed HTTP-only cookie admin auth, signed direct-to-Cloudinary uploads, and hardened contact API.",
+    problem: "Freelance video editors need a high-impact showcase for both long-form YouTube edits and vertical reels while being able to independently upload, organize, and manage heavy video assets without developer intervention.",
+    solution: "Built a custom editorial portfolio powered by a Cloudinary video pipeline with ISR caching, a secure /admin CMS supporting direct signed uploads, and a zero-dependency hardened /api/contact endpoint with Resend delivery.",
+    highlights: [
+      {
+        title: "Media Pipeline",
+        text: "Cloudinary-backed showcase, interactive reel coverflow, YouTube long-form section, and modal playback with Next.js ISR caching."
+      },
+      {
+        title: "Custom Admin Dashboard (/admin)",
+        text: "Secured with HMAC-signed HTTP-only cookies and timing-safe scrypt password verification; supports signed direct-to-Cloudinary uploads, progress tracking, metadata editing, and two-step deletion."
+      },
+      {
+        title: "Hardened Contact API (/api/contact)",
+        text: "Zero-dependency server-side validation, strict Origin header enforcement, hidden honeypot anti-spam filtering, per-IP sliding-window rate limiting, and plain-text email delivery via Resend."
+      },
+      {
+        title: "Performance & Observability",
+        text: "Integrated Vercel Analytics and Speed Insights with responsive editorial layout."
+      }
+    ]
+  },
+  {
     slug: "fotographiya-commercial",
+    featured: true,
+    isPrivateRepo: true,
     title: "Fotographiya: Commercial Business Web Platform",
     liveUrl: "https://www.fotographiya.com/",
     techStack: ["React.js", "Tailwind CSS", "Modern CSS", "Vite", "SEO"],
@@ -196,6 +240,8 @@ export const projectList = [
   },
   {
     slug: "fotographiya-wedding",
+    featured: false,
+    isPrivateRepo: true,
     title: "Fotographiya: Wedding & Cinematic Landing Platform",
     liveUrl: "https://wedding.fotographiya.com/",
     techStack: ["React.js", "Modern CSS Animations", "Tailwind CSS", "Responsive UI", "Vite"],
@@ -224,5 +270,6 @@ export const educationInfo = {
   institution: "Government Engineering College, Baran (RTU Kota)",
   degree: "Bachelor of Technology (B.Tech) in Computer Science Engineering",
   timeline: "Sep 2023 – 2027",
+  cgpa: "7.2 / 10",
   coursework: ["Data Structures & Algorithms", "Object-Oriented Programming", "Database Management Systems", "Operating Systems"]
 };

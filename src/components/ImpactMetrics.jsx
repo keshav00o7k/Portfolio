@@ -29,19 +29,15 @@ const metrics = [
 
 const ImpactMetrics = () => {
   return (
-    <div className="metrics-grid">
+    <div className="metrics-strip" aria-label="Key Engineering Highlights">
       {metrics.map((item, index) => (
-        <div key={index} className="metric-card">
-          <div className="metric-card__header">
-            <div className="metric-card__icon-box">
-              <i className={item.icon}></i>
-            </div>
-            <span className="metric-card__stat">{item.stat}</span>
+        <div key={index} className="metric-item">
+          <div className="metric-item__stat">
+            <i className={`${item.icon} metric-item__icon`} aria-hidden="true"></i>
+            <span>{item.stat}</span>
           </div>
-
-          <div className="metric-card__title">{item.title}</div>
-
-          <p className="metric-card__desc">{item.desc}</p>
+          <div className="metric-item__title">{item.title}</div>
+          <p className="metric-item__desc">{item.desc}</p>
         </div>
       ))}
     </div>
